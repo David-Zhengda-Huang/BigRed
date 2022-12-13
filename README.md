@@ -1,4 +1,7 @@
-README
+READM
+
+Youtube Link : https://www.youtube.com/watch?v=15Fj4GhpD1s
+App Smith Link : https://appsmith.cs3200.net/app/mechanic-eportal-interface/home-page-6393a4ff5bc9880dbcb218ed 
 
 Mechanic ePortal
 
