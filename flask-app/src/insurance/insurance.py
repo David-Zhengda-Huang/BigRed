@@ -7,11 +7,26 @@ from src import db
 
 insurance = Blueprint('insurance', __name__)
 
-@insurance.route('/insurance', methods=['GET'])
+@insurance.route('/policy', methods=['GET'])
 def get_insurances():
     cursor = db.get_db().cursor()
  
-    cursor.execute('Select * from Insurance')
+    cursor.execute('Select * from Policy')
+    row_headers = [x[0] for x in cursor.description]
+    json_data = []
+    theData = cursor.fetchall()
+    for row in theData:
+        json_data.append(dict(zip(row_headers, row)))
+    the_response = make_response(jsonify(json_data))
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
+
+@insurance.route('/agent', methods=['GET'])
+def get_agents():
+    cursor = db.get_db().cursor()
+ 
+    cursor.execute('Select * from Agent')
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -52,18 +67,17 @@ def get_claimç(claim_id):
     the_response.mimetype = 'application/json'
     return the_response
 
-@insurance.route('/add/claim', ['POST'])
+@insurance.route('/add/claim', methods = ['POST'])
 def add_claim():
     current_app.logger.info(request.form)
     cursor = db.get_db().cursor()
     policy_num = request.form['policy_number']
     repair_cost = request.form['repair_cost']
-    claim_id = request.form['claim_id']
     damage = request.form['damage_estimate']
-    customerId = request.form['custoemrId']
-    atFault = request.form['atFault']
+    customerId = request.form['customerId']
     mechanic_id = request.form['mechanic_id']
-    query = f'INSERT INTO Claim(policy_number, repair_cost, claim_id, damage_estimate, custoemrId, atFault, mechanic_id) VALUES(\"{policy_num}\", \"{repair_cost}\", \"{claim_id}\", \"{damage}\", \"{customerId}\",\"{atFault}\" ,\"{mechanic_id}\")'
+    vehicle_id = request.form['vehicle_id']
+    query = f'INSERT INTO Claim(policy_number, vehicleId, repair_cost, damage_estimate, customerId, mechanic_id) VALUES(\"{policy_num}\", \"{vehicle_id}\", \"{repair_cost}\", \"{damage}\",  \"{customerId}\",\"{mechanic_id}\")'
     cursor.execute(query)
     db.get_db().commit()
     return 'Successful'

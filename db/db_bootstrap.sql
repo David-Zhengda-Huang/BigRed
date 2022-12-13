@@ -20,14 +20,13 @@ use cool_db;
 
 -- Put your DDL 
 CREATE TABLE Customer(
-    customerId INT NOT NULL UNIQUE,
+    customerId INT AUTO_INCREMENT NOT NULL,
     email varchar(50),
     firsName varchar(50),
     lastName varchar(50),
     driver_license varchar(50) NOT NULL,
     street varchar(50),
     city varchar(50),
-    states varchar(50),
     zip varchar(50),
     PRIMARY KEY(customerId)
 );
@@ -72,49 +71,50 @@ insert into Customer (customerId, email, firsName, lastName, driver_license, str
 insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (38, 'ilownes11@gov.uk', 'Inna', 'Lownes', '1BdcjPftR6p4DnrFBY1pWpnkk7QE3sfGw5', '83878 Jenna Alley', 'Pieńsk', '68084-592');
 insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (39, 'bgertray12@1688.com', 'Britni', 'Gertray', '1BEe9NA9LLkrUBvWx6fQxJSWuWPEKsJHwx', '5 Superior Junction', 'Tuohua', '24236-289');
 insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (40, 'mwarland13@opensource.org', 'Matteo', 'Warland', '1FD6REQP7yBC7GtoRM5qFN8uZU1ec4XAu1', '83185 Rowland Alley', 'Isla Pucú', '0409-1749');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (41, 'vdonke14@homestead.com', 'Valaria', 'Donke', '06 Lillian Trail', 'Hudong', null, '64764-580');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (42, 'wgeaveny15@bing.com', 'Winny', 'Geaveny', '727 Doe Crossing Place', 'Houxi', null, '63323-325');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (43, 'hboyet16@pagesperso-orange.fr', 'Hanson', 'Boyet', '242 Nancy Trail', 'Tatarka', null, '30056-006');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (44, 'rohaire17@eepurl.com', 'Rosa', 'O''Haire', '0 Shasta Center', 'Zouma', null, '21130-519');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (45, 'jbaress18@constantcontact.com', 'Joela', 'Baress', '0197 Sutteridge Alley', 'Nanterre', 'Île-de-France', '41616-221');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (46, 'ygrindle19@reddit.com', 'Yevette', 'Grindle', '3097 Lawn Point', 'Gambo', null, '64661-811');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (47, 'mquartly1a@mozilla.org', 'Madlin', 'Quartly', '14 Nelson Park', 'Huangmao', null, '50390-702');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (48, 'tmccreery1b@fotki.com', 'Timmi', 'McCreery', '3155 Anderson Terrace', 'Zhangcun', null, '0172-5032');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (49, 'ocarmont1c@webs.com', 'Odie', 'Carmont', '96 Beilfuss Court', 'Hongqi', null, '21695-013');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (50, 'hskoughman1d@booking.com', 'Hadrian', 'Skoughman', '88 Hazelcrest Street', 'Kočevje', null, '0264-7780');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (51, 'credwin1e@symantec.com', 'Crosby', 'Redwin', '698 Katie Pass', 'Altıağac', null, '42023-138');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (52, 'amcgarrahan1f@reference.com', 'Ammamaria', 'McGarrahan', '67309 Monument Park', 'Nierumai', null, '49349-514');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (53, 'jshortcliffe1g@purevolume.com', 'Jackie', 'Shortcliffe', '4 Eggendart Alley', 'Kiiminki', null, '50102-100');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (54, 'credmire1h@webs.com', 'Chrysler', 'Redmire', '532 6th Trail', 'Kipen’', null, '0781-3125');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (55, 'lgreenland1i@army.mil', 'Leticia', 'Greenland', '8 Westend Lane', 'San Rafael', 'Michoacan De Ocampo', '60512-8029');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (56, 'jaikenhead1j@wikimedia.org', 'Janella', 'Aikenhead', '59305 Kipling Park', 'Baška Voda', null, '55154-4250');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (57, 'lprestige1k@cbslocal.com', 'Lowell', 'Prestige', '196 Eagle Crest Circle', 'Donghu', null, '0187-5182');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (58, 'gleggett1l@list-manage.com', 'Gussy', 'Leggett', '10844 Sycamore Point', 'Zijin', null, '47219-252');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (59, 'atresler1m@ovh.net', 'Aurlie', 'Tresler', '2156 Buena Vista Street', 'Centre de Flacq', null, '76119-1440');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (60, 'gwraggs1n@house.gov', 'Garrard', 'Wraggs', '0 Crowley Terrace', 'Ōi', null, '43611-006');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (61, 'nlucus1o@virginia.edu', 'Nowell', 'Lucus', '8 Service Crossing', 'Markušica', null, '59886-354');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (62, 'wboots1p@craigslist.org', 'Warde', 'Boots', '56 Susan Court', 'Öldziyt', null, '50967-620');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (63, 'vmorillas1q@simplemachines.org', 'Vale', 'Morillas', '700 8th Center', 'Foso', null, '0781-1183');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (64, 'jretchless1r@alexa.com', 'Jammie', 'Retchless', '8 Bunting Point', 'Fengjiang', null, '49348-793');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (65, 'bbudding1s@jalbum.net', 'Bethena', 'Budding', '1548 Ludington Park', 'Aizkraukle', null, '42192-124');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (66, 'edimaria1t@mail.ru', 'Elizabeth', 'Di Maria', '0 Red Cloud Road', 'Rancabugel', null, '36800-982');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (67, 'gpinchin1u@yelp.com', 'Gil', 'Pinchin', '3894 Hazelcrest Center', 'Vrbovec', null, '0093-8943');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (68, 'esoppeth1v@trellian.com', 'Elicia', 'Soppeth', '249 Farwell Terrace', 'Sinargalih', null, '76214-004');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (69, 'kconrard1w@qq.com', 'Katha', 'Conrard', '93 Namekagon Hill', 'Aldeia da Mata', 'Portalegre', '64525-0549');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (70, 'aagron1x@sitemeter.com', 'Alfy', 'Agron', '867 Fremont Park', 'Shuitianzhuang', null, '0456-2613');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (71, 'pbough1y@desdev.cn', 'Pier', 'Bough', '758 Dahle Way', 'Noveleta', null, '58118-1638');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (72, 'fmcgilbon1z@sourceforge.net', 'Fidole', 'McGilbon', '615 Packers Center', 'Berëza', null, '23635-582');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (73, 'lnote20@indiatimes.com', 'Lissy', 'Note', '6 Helena Way', 'Yunga', null, '76166-002');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (74, 'zkeigher21@bloglovin.com', 'Zena', 'Keigher', '4 American Ash Hill', 'Seririt', null, '41520-225');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (75, 'vcompfort22@drupal.org', 'Vince', 'Compfort', '1011 Wayridge Way', 'Horta', 'Ilha do Faial', '0378-1809');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (76, 'rwoltman23@yahoo.co.jp', 'Robbyn', 'Woltman', '64875 Russell Junction', 'Tabuc Pontevedra', null, '66758-044');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (77, 'ldrummer24@gnu.org', 'Louis', 'Drummer', '041 Londonderry Alley', 'Hamilton', null, '49349-222');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (78, 'kruddock25@w3.org', 'Kathlin', 'Ruddock', '07283 Paget Court', 'Morelos', 'Michoacan De Ocampo', '0378-4297');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (79, 'pspilling26@vk.com', 'Patricio', 'Spilling', '0546 Holmberg Point', 'Stockholm', 'Stockholm', '49693-2001');
-insert into Customer (customerId, email, firsName, lastName, street, city, states, zip) values (80, 'rcoppenhall27@unesco.org', 'Roderic', 'Coppenhall', '84077 Donald Center', 'Centar Župa', null, '0378-1666');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (41, 'eribou14@webs.com', 'Ermengarde', 'Ribou', '54473-208', '6604 West Road', 'Hiji', '17856-4091');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (42, 'mhatherill15@friendfeed.com', 'Michal', 'Hatherill', '51389-122', '1009 Kings Trail', 'Hede', '65862-515');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (43, 'lsavoury16@histats.com', 'Lia', 'Savoury', '58118-0105', '7298 Columbus Road', 'Limit', '24208-353');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (44, 'lrimbault17@businesswire.com', 'Lonee', 'Rimbault', '54868-2176', '658 Holy Cross Junction', 'Tojal', '40002-002');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (45, 'agleder18@intel.com', 'Aeriel', 'Gleder', '56152-0815', '76030 Briar Crest Lane', 'Scranton', '35356-724');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (46, 'nrunnacles19@cnbc.com', 'Nertie', 'Runnacles', '49349-308', '820 Brown Pass', 'Barcelona', '68016-072');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (47, 'bkerrane1a@google.ru', 'Bettine', 'Kerrane', '33261-684', '800 Havey Place', 'Cabuyao', '49349-763');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (48, 'chasell1b@mozilla.com', 'Claudio', 'Hasell', '68084-647', '02 American Ash Hill', 'Marseille', '10096-0295');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (49, 'rquipp1c@homestead.com', 'Rebekah', 'Quipp', '52428-001', '8048 Pond Alley', 'Aswan', '11584-1080');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (50, 'bwaistall1d@flickr.com', 'Bink', 'Waistall', '17478-101', '93 Buena Vista Trail', 'Espinheira', '54569-5584');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (51, 'njerdon1e@reverbnation.com', 'Natty', 'Jerdon', '60429-121', '7734 Fairfield Pass', 'Khallat Ḩamāmah', '54569-3069');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (52, 'mgurnee1f@meetup.com', 'Merl', 'Gurnee', '63717-871', '44042 Daystar Parkway', 'Huangtian', '55316-243');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (53, 'cpollack1g@cmu.edu', 'Constantina', 'Pollack', '10578-010', '12 Pawling Way', 'Stockholm', '59535-1301');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (54, 'cborham1h@163.com', 'Cacilie', 'Borham', '0363-0696', '3621 Golf Course Way', 'Datagon', '76020-400');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (55, 'bwhithorn1i@cnbc.com', 'Berenice', 'Whithorn', '36987-1746', '2 Eliot Alley', 'Baizhu', '59779-899');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (56, 'tandrus1j@craigslist.org', 'Tomi', 'Andrus', '35356-694', '88 Swallow Plaza', 'Rasshevatskaya', '67544-697');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (57, 'rwinfield1k@cafepress.com', 'Rachele', 'Winfield', '0548-9061', '6 Eliot Park', 'Marisol', '43742-0197');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (58, 'mbromby1l@google.co.jp', 'Merle', 'Bromby', '68654-773', '158 Waywood Junction', 'Jinrongjie', '54973-2906');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (59, 'dwhistlecroft1m@moonfruit.com', 'Dennis', 'Whistlecroft', '36987-2349', '32 Ridgeway Point', 'Phước An', '10096-0317');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (60, 'sbazek1n@parallels.com', 'Shellysheldon', 'Bazek', '0591-3221', '7 Lerdahl Parkway', 'Крушопек', '49288-0113');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (61, 'cluney1o@trellian.com', 'Christoper', 'Luney', '49614-175', '379 Annamark Crossing', 'Sebewe', '42507-837');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (62, 'mescot1p@mlb.com', 'Mona', 'Escot', '54868-1743', '9201 Mendota Place', 'Quezalguaque', '10056-533');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (63, 'rrowston1q@narod.ru', 'Rudolf', 'Rowston', '11509-0031', '51051 Grover Road', 'Balatero', '65044-2215');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (64, 'emelland1r@craigslist.org', 'Erika', 'Melland', '14783-057', '7 Corscot Circle', 'Xinfa', '58599-003');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (65, 'lflecknoe1s@live.com', 'Lacie', 'Flecknoe', '63629-4093', '3950 Bashford Drive', 'Kirkuk', '0378-0231');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (66, 'gsymper1t@yandex.ru', 'Giorgio', 'Symper', '53808-0916', '307 Lawn Plaza', 'Qiaotou', '0143-2423');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (67, 'himpey1u@umn.edu', 'Hugo', 'Impey', '54859-512', '45 Utah Pass', 'Padre Las Casas', '0406-0367');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (68, 'vflieger1v@netscape.com', 'Valeda', 'Flieger', '60429-313', '17984 Dakota Alley', 'Kiên Lương', '36800-419');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (69, 'rleall1w@joomla.org', 'Riki', 'Leall', '51384-100', '83 Jay Alley', 'Burgos', '63323-446');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (70, 'vmoreland1x@canalblog.com', 'Vale', 'Moreland', '0603-5439', '05 Becker Parkway', 'Osasco', '59779-977');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (71, 'dreisin1y@printfriendly.com', 'Dermot', 'Reisin', '65044-6692', '01 Annamark Lane', 'Trelleborg', '0245-0035');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (72, 'ccootes1z@altervista.org', 'Cesaro', 'Cootes', '51514-0338', '374 Gerald Terrace', 'Novocheboksarsk', '51117-001');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (73, 'dhair20@google.nl', 'Darlene', 'Hair', '68016-255', '535 Claremont Street', 'Soanierana Ivongo', '64942-1179');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (74, 'mphilcock21@rambler.ru', 'Mirabelle', 'Philcock', '17452-380', '8 Declaration Point', 'Ntsoudjini', '63187-013');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (75, 'tcleall22@jigsy.com', 'Thorndike', 'Cleall', '67544-087', '9583 Truax Lane', 'Lamalewar', '68788-0241');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (76, 'mgoard23@mail.ru', 'Munmro', 'Goard', '64679-185', '982 Victoria Terrace', 'Duboka', '0363-0583');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (77, 'wpeck24@facebook.com', 'Willey', 'Peck', '0078-0370', '18 Waxwing Park', 'Boca de Parita', '49738-872');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (78, 'cvelten25@illinois.edu', 'Camilla', 'Velten', '11822-4111', '12 Pierstorff Pass', 'Rogachëvo', '0904-5379');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (79, 'eblofield26@omniture.com', 'Eldin', 'Blofield', '67544-361', '99906 Ridge Oak Parkway', 'Dobryanka', '57520-0209');
+insert into Customer (customerId, email, firsName, lastName, driver_license, street, city, zip) values (80, 'ecosins27@deviantart.com', 'Elvis', 'Cosins', '68391-170', '749 Sycamore Hill', 'Santa Rita', '62175-210');
+
 
 CREATE TABLE Insurance(
-    companyId INT NOT NULL UNIQUE, 
+    companyId INT AUTO_INCREMENT NOT NULL UNIQUE, 
     companyName varchar(50),
     PRIMARY KEY(companyId)
 );
@@ -161,7 +161,7 @@ insert into Insurance (companyId, companyName) values (39, 'Jaxbean');
 insert into Insurance (companyId, companyName) values (40, 'Buzzbean');
 
 CREATE TABLE ReapirShop(
-    storeId INT, 
+    storeId INT AUTO_INCREMENT, 
     street varchar(50),
     city varchar(50),
     zip varchar(50),
@@ -200,13 +200,13 @@ insert into ReapirShop (storeId, street, city, zip) values (29, '0 Melvin Plaza'
 insert into ReapirShop (storeId, street, city, zip) values (30, '16 Debs Park', 'Parintins', '41163-205');
 
 CREATE TABLE Vehicle(
-    ownerID integer NOT NULL,
-    license_plate varchar(50) NOT NULL UNIQUE,
+    ownerID integer AUTO_INCREMENT NOT NULL,
+    license_plate varchar(50) NOT NULL,
     years INT,
     make varchar(50),
     model varchar(50),
     color varchar(50),
-    PRIMARY KEY(license_plate),
+    PRIMARY KEY(ownerID),
     FOREIGN KEY (ownerID) REFERENCES Customer (customerId)
 );
 
@@ -243,7 +243,7 @@ insert into Vehicle (ownerId, license_plate, years, make, model, color) values (
 insert into Vehicle (ownerID, license_plate, years, make, model, color) values (31, 'CA-MB', 2004, 'Kia', 'Spectra', 'Violet');
 insert into Vehicle (ownerID, license_plate, years, make, model, color) values (32, 'PA-5', 2008, 'Toyota', 'Camry Solara', 'Pink');
 insert into Vehicle (ownerID, license_plate, years, make, model, color) values (33, 'KI-P', 1991, 'Mitsubishi', 'GTO', 'Khaki');
-insert into Vehicle (ownerID, license_plate, years, make, model, color) values (34, 'US-AK', 2008, 'BMW', '3 Series', 'Pink');
+insert into Vehicle (ownerID, license_plate, years, make, model, color) values (34, 'US-AK2', 2008, 'BMW', '3 Series', 'Pink');
 insert into Vehicle (ownerID, license_plate, years, make, model, color) values (35, 'BR-MG', 2006, 'Lamborghini', 'Gallardo', 'Pink');
 insert into Vehicle (ownerID, license_plate, years, make, model, color) values (36, 'US-TX', 1992, 'Chevrolet', 'Lumina', 'Turquoise');
 insert into Vehicle (ownerID, license_plate, years, make, model, color) values (37, 'CA-SK', 1993, 'Subaru', 'Alcyone SVX', 'Khaki');
@@ -293,7 +293,7 @@ insert into Vehicle (ownerID, license_plate, years, make, model, color) values (
 
 CREATE TABLE Parts(
     stock INT,
-    part_id INT,
+    part_id INT AUTO_INCREMENT,
     cost INT,
     part_name varchar(50),
     PRIMARY KEY(part_id)
@@ -322,7 +322,7 @@ insert into Parts (stock, part_id, cost, part_name) values (8, 20, 69, 'License 
 
 
 CREATE TABLE Agent(
-   employee_Id INT NOT NULL UNIQUE,
+   employee_Id INT AUTO_INCREMENT NOT NULL UNIQUE,
    firstName varchar(50),
    lastName varchar(50),
    PRIMARY KEY(employee_Id)
@@ -403,7 +403,7 @@ insert into Agent (employee_Id, firstName, lastName) values (70, 'Carrissa', 'Ph
 
 CREATE TABLE Policy(
     issueDate varchar(50),
-    policy_number INT NOT NULL UNIQUE,
+    policy_number INT AUTO_INCREMENT NOT NULL UNIQUE,
     deductible INT,
     policy_type text,
     policy_cost INT,
@@ -475,7 +475,7 @@ insert into Policy (issueDate, policy_number, deductible, policy_type, policy_co
 
 CREATE TABLE mechanic_employee(
     storeId INT NOT NULL,
-    employeeId INT NOT NULL UNIQUE,
+    employeeId INT AUTO_INCREMENT NOT NULL UNIQUE,
     firstName varchar(50),
     middleInitial varchar(50),
     lastName varchar(50),
@@ -548,11 +548,11 @@ insert into mechanic_employee (storeId, employeeId, firstName, middleInitial, la
 CREATE TABLE Claim(
     policy_number INT ,
     repair_cost INT,
-    claim_id INT UNIQUE,
+    claim_id INT AUTO_INCREMENT UNIQUE,
     damage_estimate float,
     customerId INT NOT NULL,
     atFault boolean,
-    vehicleId INT NOT NULL,
+    vehicleId INT,
     mechanic_id INT,
     PRIMARY KEY(claim_id),
     FOREIGN KEY (policy_number) REFERENCES Policy (policy_number),
@@ -595,7 +595,7 @@ insert into Claim (policy_number, repair_cost, claim_id, damage_estimate, custom
 
 
 CREATE TABLE Repair_Order(
-    repair_id INT NOT NULL UNIQUE,
+    repair_id INT AUTO_INCREMENT NOT NULL UNIQUE,
     claim_id  INT,
     appointment_charge INT,
     part_cost INT,
@@ -640,7 +640,7 @@ insert into Repair_Order (repair_id, claim_id, part_cost, labor_cost, vehicleId,
 
 CREATE TABLE Status(
    summary text,
-   status_id INT NOT NULL UNIQUE,
+   status_id INT AUTO_INCREMENT NOT NULL UNIQUE,
    pickup_time varchar(50),
    PRIMARY KEY(status_id)
 );
@@ -711,7 +711,7 @@ CREATE TABLE Payment(
     mechanic_id INT,
     repair_price INT,
     repair_id INT NOT NULL,
-    payment_Id INT NOT NULL UNIQUE,
+    payment_Id INT AUTO_INCREMENT NOT NULL UNIQUE,
     PRIMARY KEY(payment_Id),
     FOREIGN KEY (mechanic_id) REFERENCES ReapirShop (storeId),
     FOREIGN KEY (repair_id) REFERENCES Repair_Order (repair_id)
