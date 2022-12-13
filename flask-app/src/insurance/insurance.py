@@ -51,3 +51,19 @@ def get_claimç(claim_id):
     the_response.status_code = 200
     the_response.mimetype = 'application/json'
     return the_response
+
+@insurance.route('/add/claim', ['POST'])
+def add_claim():
+    current_app.logger.info(request.form)
+    cursor = db.get_db().cursor()
+    policy_num = request.form['policy_number']
+    repair_cost = request.form['repair_cost']
+    claim_id = request.form['claim_id']
+    damage = request.form['damage_estimate']
+    customerId = request.form['custoemrId']
+    atFault = request.form['atFault']
+    mechanic_id = request.form['mechanic_id']
+    query = f'INSERT INTO Claim(policy_number, repair_cost, claim_id, damage_estimate, custoemrId, atFault, mechanic_id) VALUES(\"{policy_num}\", \"{repair_cost}\", \"{claim_id}\", \"{damage}\", \"{customerId}\",\"{atFault}\" ,\"{mechanic_id}\")'
+    cursor.execute(query)
+    db.get_db().commit()
+    return 'Successful'
